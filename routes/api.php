@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\Api\ServiceController;
+use App\Http\Controllers\Api\ServiceController;
 
 Route::apiResource('services', ServiceController::class);
 
