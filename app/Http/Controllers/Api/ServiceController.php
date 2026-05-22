@@ -177,4 +177,25 @@ class ServiceController extends Controller
             "data" => $service
         ]);
     }
+
+    public function getByStatus($status)
+    {
+        $is_active = filter_var($status, FILTER_VALIDATE_BOOLEAN);
+        $services = \App\Models\Service::where('status', $is_active)->get();
+        
+        return response()->json(['data' => $services], 200);
+    }
+
+    public function changeStatus(\Illuminate\Http\Request $request, $id)
+    {
+        $request->validate(['status' => 'required|boolean']);
+        
+        $service = \App\Models\Service::findOrFail($id);
+        $service->update(['status' => $request->status]);
+        
+        return response()->json([
+            'message' => 'Status service berhasil diubah', 
+            'data' => $service
+        ], 200);
+    }
 }

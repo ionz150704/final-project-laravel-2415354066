@@ -65,4 +65,25 @@ class CustomerController extends Controller
         $customer->delete();
         return response()->json(['success' => true, 'message' => 'Deleted']);
     }
+
+    public function getByStatus($status)
+    {
+        $is_active = filter_var($status, FILTER_VALIDATE_BOOLEAN);
+        $customers = \App\Models\Customer::where('status', $is_active)->get();
+        
+        return response()->json(['data' => $customers], 200);
+    }
+
+    public function changeStatus(\Illuminate\Http\Request $request, $id)
+    {
+        $request->validate(['status' => 'required|boolean']);
+        
+        $customer = \App\Models\Customer::findOrFail($id);
+        $customer->update(['status' => $request->status]);
+        
+        return response()->json([
+            'message' => 'Status customer berhasil diubah', 
+            'data' => $customer
+        ], 200);
+    }
 }

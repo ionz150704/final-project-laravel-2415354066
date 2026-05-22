@@ -62,4 +62,26 @@ class SubscriptionController extends Controller
         $subscription->delete();
         return response()->json(['success' => true, 'message' => 'Deleted']);
     }
+
+    public function getByStatus($status)
+    {
+        $subscriptions = \App\Models\Subscription::with(['customer', 'service'])
+            ->where('status', $status)
+            ->get();
+            
+        return response()->json(['data' => $subscriptions], 200);
+    }
+
+    public function changeStatus(\Illuminate\Http\Request $request, $id)
+    {
+        $request->validate(['status' => 'required|string']);
+        
+        $subscription = \App\Models\Subscription::findOrFail($id);
+        $subscription->update(['status' => $request->status]);
+        
+        return response()->json([
+            'message' => 'Status subscription berhasil diubah', 
+            'data' => $subscription
+        ], 200);
+    }
 }
