@@ -1,58 +1,124 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Final Project Aplikasi Berbasis Laravel - Dokumentasi API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Identitas Mahasiswa
 
-## About Laravel
+- **Nama:** Putu Rion Aditya Gunawan
+- **NIM:** 2415354066
+- **Kelas/Rombel:** TRPL 4B
+- **Tanggal Praktikum:** 25 Mei 2026
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi & Tools yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Sistem Operasi:** Windows 11
+- **Bahasa Pemrograman:** PHP (Laravel Framework)
+- **Database:** MySQL / phpMyAdmin
+- **Tools Pengujian API:** Thunder Client / Postman
+- **Code Editor & Version Control:** VS Code & Git
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Daftar Endpoint API
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### A. Modul Customer
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+| No | HTTP Method | Endpoint | Deskripsi | Status Dokumentasi |
+|:--:|:-----------:|:---------|:----------|:------------------:|
+| 1 | `GET` | `/customers/{id}` | Mengambil detail data satu pelanggan berdasarkan ID | [ ] Selesai |
+| 2 | `POST` | `/customers` | Menambahkan data pelanggan baru ke dalam database | [ ] Selesai |
+| 3 | `PUT` | `/customers/{id}` | Memperbarui keseluruhan data pelanggan berdasarkan ID | [ ] Selesai |
+| 4 | `DELETE` | `/customers/{id}` | Menghapus data pelanggan dari database | [ ] Selesai |
+| 5 | `GET` | `/customers-next-id` | Mendapatkan ID atau nomor urut selanjutnya untuk pelanggan baru | [ ] Selesai |
+| 6 | `GET` | `/customers/status/{status}` | Mengambil daftar pelanggan berdasarkan status tertentu | [ ] Selesai |
+| 7 | `PATCH` | `/customers/{id}/change-status` | Mengubah status pelanggan secara spesifik (parsial) | [ ] Selesai |
 
-## Agentic Development
+### B. Modul Service
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+| No | HTTP Method | Endpoint | Deskripsi | Status Dokumentasi |
+|:--:|:-----------:|:---------|:----------|:------------------:|
+| 8 | `GET` | `/services/{id}` | Mengambil detail data layanan berdasarkan ID | [ ] Selesai |
+| 9 | `POST` | `/services` | Menambahkan jenis layanan baru | [ ] Selesai |
+| 10 | `PUT` | `/services/{id}` | Memperbarui data layanan yang sudah ada berdasarkan ID | [ ] Selesai |
+| 11 | `DELETE` | `/services/{id}` | Menghapus data layanan dari sistem | [ ] Selesai |
 
-```bash
-composer require laravel/boost --dev
+### C. Modul Subscription
 
-php artisan boost:install
-```
+| No | HTTP Method | Endpoint | Deskripsi | Status Dokumentasi |
+|:--:|:-----------:|:---------|:----------|:------------------:|
+| 12 | `GET` | `/subscriptions` | Mengambil semua daftar *subscription* yang ada di sistem | [ ] Selesai |
+| 13 | `GET` | `/subscriptions/{id}` | Mengambil detail satu data *subscription* berdasarkan ID | [ ] Selesai |
+| 14 | `POST` | `/subscriptions` | Membuat data *subscription* baru untuk *customer* | [ ] Selesai |
+| 15 | `PATCH` | `/subscriptions/{id}/change-status` | Memperbarui status *subscription* | [ ] Selesai |
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## Langkah-Langkah Pengujian Endpoint
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Pastikan *local server* database (MySQL via phpMyAdmin/XAMPP/Laragon) sudah aktif.
+2. Jalankan perintah `php artisan serve` pada terminal VS Code untuk mengaktifkan server lokal Laravel.
+3. Buka ekstensi **Thunder Client** di VS Code.
+4. Masukkan URL endpoint (sesuaikan domain lokal/port, misalnya: `http://localhost:8000` atau dengan tambahan *prefix* `/api` jika diatur di `api.php`).
+5. Pilih HTTP Method yang sesuai, isi *Request Body* (jika bertipe POST/PUT/PATCH), lalu klik **Send**.
+6. Ambil screenshot hasil *Response Body* beserta *HTTP Status Code*-nya untuk dokumentasi di bawah ini.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Dokumentasi Hasil Pengujian (Screenshot)
 
-## Security Vulnerabilities
+*(Ganti teks placeholder di bawah dengan tag gambar atau screenshot dari Thunder Client)*
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Modul Customer
 
-## License
+#### 1. Get Single Customer (`GET /customers/{id}`)
+> ![Get Single Customer](https://placehold.co/600x400?text=Screenshot+GET+Customer)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+#### 2. Create Customer (`POST /customers`)
+> ![Create Customer](https://placehold.co/600x400?text=Screenshot+POST+Customer)
+
+#### 3. Update Customer (`PUT /customers/{id}`)
+> ![Update Customer](https://placehold.co/600x400?text=Screenshot+PUT+Customer)
+
+#### 4. Delete Customer (`DELETE /customers/{id}`)
+> ![Delete Customer](https://placehold.co/600x400?text=Screenshot+DELETE+Customer)
+
+#### 5. Get Next Customer ID (`GET /customers-next-id`)
+> ![Get Next Customer ID](https://placehold.co/600x400?text=Screenshot+GET+Next+ID)
+
+#### 6. Get Customers by Status (`GET /customers/status/{status}`)
+> ![Get Customers by Status](https://placehold.co/600x400?text=Screenshot+GET+Customer+by+Status)
+
+#### 7. Change Customer Status (`PATCH /customers/{id}/change-status`)
+> ![Change Customer Status](https://placehold.co/600x400?text=Screenshot+PATCH+Customer+Status)
+
+---
+
+### Modul Service
+
+#### 8. Get Single Service (`GET /services/{id}`)
+> ![Get Single Service](https://placehold.co/600x400?text=Screenshot+GET+Service)
+
+#### 9. Create Service (`POST /services`)
+> ![Create Service](https://placehold.co/600x400?text=Screenshot+POST+Service)
+
+#### 10. Update Service (`PUT /services/{id}`)
+> ![Update Service](https://placehold.co/600x400?text=Screenshot+PUT+Service)
+
+#### 11. Delete Service (`DELETE /services/{id}`)
+> ![Delete Service](https://placehold.co/600x400?text=Screenshot+DELETE+Service)
+
+---
+
+### Modul Subscription
+
+#### 12. Get All Subscriptions (`GET /subscriptions`)
+> ![Get All Subscriptions](https://placehold.co/600x400?text=Screenshot+GET+All+Subscriptions)
+
+#### 13. Get Single Subscription (`GET /subscriptions/{id}`)
+> ![Get Single Subscription](https://placehold.co/600x400?text=Screenshot+GET+Single+Subscription)
+
+#### 14. Create Subscription (`POST /subscriptions`)
+> ![Create Subscription](https://placehold.co/600x400?text=Screenshot+POST+Subscription)
+
+#### 15. Change Subscription Status (`PATCH /subscriptions/{id}/change-status`)
+> ![Change Subscription Status](https://placehold.co/600x400?text=Screenshot+PATCH+Subscription+Status)
