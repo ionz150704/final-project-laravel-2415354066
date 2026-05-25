@@ -29,27 +29,24 @@
 | 2 | `POST` | `/customers` | Menambahkan data pelanggan baru ke dalam database | [ ] Selesai |
 | 3 | `PUT` | `/customers/{id}` | Memperbarui keseluruhan data pelanggan berdasarkan ID | [ ] Selesai |
 | 4 | `DELETE` | `/customers/{id}` | Menghapus data pelanggan dari database | [ ] Selesai |
-| 5 | `GET` | `/customers-next-id` | Mendapatkan ID atau nomor urut selanjutnya untuk pelanggan baru | [ ] Selesai |
-| 6 | `GET` | `/customers/status/{status}` | Mengambil daftar pelanggan berdasarkan status tertentu | [ ] Selesai |
-| 7 | `PATCH` | `/customers/{id}/change-status` | Mengubah status pelanggan secara spesifik (parsial) | [ ] Selesai |
 
 ### B. Modul Service
 
 | No | HTTP Method | Endpoint | Deskripsi | Status Dokumentasi |
 |:--:|:-----------:|:---------|:----------|:------------------:|
-| 8 | `GET` | `/services/{id}` | Mengambil detail data layanan berdasarkan ID | [ ] Selesai |
-| 9 | `POST` | `/services` | Menambahkan jenis layanan baru | [ ] Selesai |
-| 10 | `PUT` | `/services/{id}` | Memperbarui data layanan yang sudah ada berdasarkan ID | [ ] Selesai |
-| 11 | `DELETE` | `/services/{id}` | Menghapus data layanan dari sistem | [ ] Selesai |
+| 5 | `GET` | `/services/{id}` | Mengambil detail data layanan berdasarkan ID | [ ] Selesai |
+| 6 | `POST` | `/services` | Menambahkan jenis layanan baru | [ ] Selesai |
+| 7 | `PUT` | `/services/{id}` | Memperbarui data layanan yang sudah ada berdasarkan ID | [ ] Selesai |
+| 8 | `DELETE` | `/services/{id}` | Menghapus data layanan dari sistem | [ ] Selesai |
 
 ### C. Modul Subscription
 
 | No | HTTP Method | Endpoint | Deskripsi | Status Dokumentasi |
 |:--:|:-----------:|:---------|:----------|:------------------:|
-| 12 | `GET` | `/subscriptions` | Mengambil semua daftar *subscription* yang ada di sistem | [ ] Selesai |
-| 13 | `GET` | `/subscriptions/{id}` | Mengambil detail satu data *subscription* berdasarkan ID | [ ] Selesai |
-| 14 | `POST` | `/subscriptions` | Membuat data *subscription* baru untuk *customer* | [ ] Selesai |
-| 15 | `PATCH` | `/subscriptions/{id}/change-status` | Memperbarui status *subscription* | [ ] Selesai |
+| 9 | `GET` | `/subscriptions` | Mengambil semua daftar *subscription* yang ada di sistem | [ ] Selesai |
+| 10 | `GET` | `/subscriptions/{id}` | Mengambil detail satu data *subscription* berdasarkan ID | [ ] Selesai |
+| 11 | `POST` | `/subscriptions` | Membuat data *subscription* baru untuk *customer* | [ ] Selesai |
+| 12 | `PATCH` | `/subscriptions/{id}/change-status` | Memperbarui status *subscription* | [ ] Selesai |
 
 ---
 
@@ -71,54 +68,46 @@
 ### Modul Customer
 
 #### 1. Get Single Customer (`GET /customers/{id}`)
-> ![Get Single Customer](https://placehold.co/600x400?text=Screenshot+GET+Customer)
+> ![Get Single Customer](ss/1.png)
 
 #### 2. Create Customer (`POST /customers`)
-> ![Create Customer](https://placehold.co/600x400?text=Screenshot+POST+Customer)
+> ![Create Customer](ss/2.png)
 
 #### 3. Update Customer (`PUT /customers/{id}`)
-> ![Update Customer](https://placehold.co/600x400?text=Screenshot+PUT+Customer)
+> ![Update Customer](ss/3.png)
 
 #### 4. Delete Customer (`DELETE /customers/{id}`)
-> ![Delete Customer](https://placehold.co/600x400?text=Screenshot+DELETE+Customer)
+> ![Delete Customer](ss/4.png)
 
-#### 5. Get Next Customer ID (`GET /customers-next-id`)
-> ![Get Next Customer ID](https://placehold.co/600x400?text=Screenshot+GET+Next+ID)
-
-#### 6. Get Customers by Status (`GET /customers/status/{status}`)
-> ![Get Customers by Status](https://placehold.co/600x400?text=Screenshot+GET+Customer+by+Status)
-
-#### 7. Change Customer Status (`PATCH /customers/{id}/change-status`)
-> ![Change Customer Status](https://placehold.co/600x400?text=Screenshot+PATCH+Customer+Status)
 
 ---
 
 ### Modul Service
 
-#### 8. Get Single Service (`GET /services/{id}`)
-> ![Get Single Service](https://placehold.co/600x400?text=Screenshot+GET+Service)
+#### 5. Get Single Service (`GET /services/{id}`)
+> ![Get Single Service](ss/5.png)
 
-#### 9. Create Service (`POST /services`)
-> ![Create Service](https://placehold.co/600x400?text=Screenshot+POST+Service)
+#### 6. Create Service (`POST /services`)
+> ![Create Service](ss/6.png)
 
-#### 10. Update Service (`PUT /services/{id}`)
-> ![Update Service](https://placehold.co/600x400?text=Screenshot+PUT+Service)
+#### 7. Update Service (`PUT /services/{id}`)
+> ![Update Service](ss/7.png)
 
-#### 11. Delete Service (`DELETE /services/{id}`)
-> ![Delete Service](https://placehold.co/600x400?text=Screenshot+DELETE+Service)
+#### 8. Delete Service (`DELETE /services/{id}`)
+> ![Delete Service](ss/8.png)
 
 ---
 
 ### Modul Subscription
 
-#### 12. Get All Subscriptions (`GET /subscriptions`)
-> ![Get All Subscriptions](https://placehold.co/600x400?text=Screenshot+GET+All+Subscriptions)
+#### 9. Get All Subscriptions (`GET /subscriptions`)
+> ![Get All Subscriptions](ss/9.png)
 
-#### 13. Get Single Subscription (`GET /subscriptions/{id}`)
-> ![Get Single Subscription](https://placehold.co/600x400?text=Screenshot+GET+Single+Subscription)
+#### 10. Get Single Subscription (`GET /subscriptions/{id}`)
+> ![Get Single Subscription](ss/10.png)
 
-#### 14. Create Subscription (`POST /subscriptions`)
-> ![Create Subscription](https://placehold.co/600x400?text=Screenshot+POST+Subscription)
+#### 11. Create Subscription (`POST /subscriptions`)
+> ![Create Subscription](ss/11.png)
 
-#### 15. Change Subscription Status (`PATCH /subscriptions/{id}/change-status`)
-> ![Change Subscription Status](https://placehold.co/600x400?text=Screenshot+PATCH+Subscription+Status)
+#### 12. Change Subscription Status (`PATCH /subscriptions/{id}/change-status`)
+> ![Change Subscription Status](ss/12.png)
